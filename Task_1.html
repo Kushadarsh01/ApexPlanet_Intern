@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Webpage</title>
+
+  <style>
+    /* General body and typography */
+    body {
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0 20px 40px 20px;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Top header bar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #0d47a1, #1976d2, #26a69a);
+      text-align: center;
+      padding: 20px 10px;
+      z-index: 1000;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main content container */
+    main {
+      max-width: 900px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+      border-radius: 12px;
+      padding: 40px;
+      margin-top: 140px; /* push below header */
+      box-sizing: border-box;
+    }
+
+    /* Section titles */
+    main h2 {
+      font-size: 1.4rem;
+      color: #0d47a1;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    /* Paragraphs */
+    main p {
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    /* Links list */
+    ul {
+      margin: 0 0 16px 20px;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    ul li a {
+      color: #1976d2;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+      color: #0d47a1;
+    }
+
+    /* Image container */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 30px 0;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 750px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgb(0 0 0 / 0.1);
+      border: 2px solid #134340;
+      object-fit: cover;
+    }
+
+    /* Button styling */
+    #alert-button {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      user-select: none;
+      box-shadow: 0 8px 15px rgba(25, 118, 210, 0.25);
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    #alert-button:hover {
+      background: #0d47a1;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(25, 118, 210, 0.35);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      #alert-button {
+        width: 100%;
+        padding: 16px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Welcome to My Simple Webpage</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section>
+      <h2>About This Project</h2>
+      <p>This is a basic webpage demonstrating HTML structure, CSS styling, and JavaScript interactivity. We've included headings, paragraphs, images, and links.</p>
+    </section>
+
+    <section>
+      <h2>Featured Image</h2>
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+             alt="Professional workspace with laptop, coffee, and notebook on desk">
+      </div>
+      <p>This is a professional image representing a workspace.</p>
+    </section>
+
+    <section>
+      <h2>Useful Links</h2>
+      <p>Explore these resources:</p>
+      <ul>
+        <li><a href="https://www.google.com" target="_blank">Google Search</a></li>
+        <li><a href="https://www.w3schools.com" target="_blank">W3Schools Tutorials</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Interactive Button</h2>
+      <p>Click the button below to see JavaScript in action!</p>
+      <button id="alert-button">Generate Alert</button>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>This webpage showcases fundamental web development concepts.</p>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> My Simple Webpage. Created with HTML, CSS, and JavaScript.</p>
+    </footer>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    // Interactive alert button
+    document.getElementById('alert-button').addEventListener('click', function () {
+      alert('Hello! This is a JavaScript alert triggered by clicking the button.');
+    });
+
+    // Auto-update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
