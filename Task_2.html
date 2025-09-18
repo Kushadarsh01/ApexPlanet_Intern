@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Web Project</title>
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f4f7fa;
+      color: #333;
+    }
+
+    /* Header & Navbar */
+    header {
+      background: linear-gradient(90deg, #1a237e, #283593, #3949ab);
+      color: #fff;
+      padding: 1rem 0;
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    nav h1 {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .container:hover {
+      transform: translateY(-3px);
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #1a237e;
+      border-left: 6px solid #3949ab;
+      padding-left: 10px;
+    }
+
+    /* Form Styling */
+    form {
+      display: grid;
+      gap: 15px;
+    }
+    label {
+      font-weight: 600;
+    }
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+    input:focus, textarea:focus {
+      border: 1px solid #3949ab;
+      box-shadow: 0 0 5px rgba(57,73,171,0.5);
+    }
+    button {
+      padding: 12px 20px;
+      background: linear-gradient(45deg, #1a237e, #3949ab);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background: linear-gradient(45deg, #0d47a1, #283593);
+      transform: translateY(-2px);
+    }
+
+    #formMessage {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    /* To-Do List */
+    .todo-app {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #taskInput {
+      flex: 1;
+    }
+    #taskList {
+      list-style: none;
+      margin-top: 15px;
+      padding: 0;
+    }
+    #taskList li {
+      padding: 12px;
+      margin-bottom: 8px;
+      background: #f1f4ff;
+      border: 1px solid #c5cae9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    #taskList li:hover {
+      background: #e8eaf6;
+    }
+    #taskList li button {
+      background: #d32f2f;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    #taskList li button:hover {
+      background: #b71c1c;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      background: #1a237e;
+      color: white;
+      border-top: 4px solid #3949ab;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Advanced Web Project</h1>
+      <ul>
+        <li><a href="#contact">Contact Form</a></li>
+        <li><a href="#todo">To-Do List</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Form -->
+  <section id="contact" class="container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formMessage"></p>
+  </section>
+
+  <!-- To-Do List -->
+  <section id="todo" class="container">
+    <h2>My To-Do List</h2>
+    <div class="todo-app">
+      <input type="text" id="taskInput" placeholder="Enter a new task...">
+      <button id="addTaskBtn">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Advanced Web Project | Built with ❤️ using HTML, CSS & JS</p>
+  </footer>
+
+  <script>
+    // Form Validation
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let message = document.getElementById("message").value.trim();
+      let formMessage = document.getElementById("formMessage");
+
+      if (name === "" || email === "" || message === "") {
+        formMessage.textContent = "⚠️ Please fill out all fields.";
+        formMessage.style.color = "red";
+        return;
+      }
+
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        formMessage.textContent = "⚠️ Invalid email format.";
+        formMessage.style.color = "red";
+        return;
+      }
+
+      formMessage.textContent = "✅ Message sent successfully!";
+      formMessage.style.color = "green";
+
+      this.reset();
+    });
+
+    // To-Do List
+    const addTaskBtn = document.getElementById("addTaskBtn");
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+
+    addTaskBtn.addEventListener("click", () => {
+      let taskText = taskInput.value.trim();
+      if (taskText === "") return;
+
+      let li = document.createElement("li");
+      li.innerHTML = `<span>${taskText}</span> <button>Delete</button>`;
+      
+      li.querySelector("button").addEventListener("click", () => {
+        li.remove();
+      });
+
+      taskList.appendChild(li);
+      taskInput.value = "";
+    });
+  </script>
+</body>
+</html>
